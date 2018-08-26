@@ -1,0 +1,26 @@
+{
+  "name": "video-extracter",
+  "version": "1.0.0",
+  "description": "get photos from video",
+  "main": "lib.js",
+  "scripts": {
+    "test": "node demo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoshan5733/video-extracter.git"
+  },
+  "keywords": [
+    "video",
+    "extracter"
+  ],
+  "author": "xiaoshan5733",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiaoshan5733/video-extracter/issues"
+  },
+  "homepage": "https://github.com/xiaoshan5733/video-extracter#readme",
+  "dependencies": {
+    "ffmpeg": "0.0.4"
+  }
+}
