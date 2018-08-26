@@ -5,7 +5,7 @@
 ````
 // demo 1
 
-const extracter = require('./lib.js');
+const extracter = require('video-extracter');
 extracter('./movie.mp4').then((res) => {
   console.log(res)
 }).catch((err) => {
@@ -16,7 +16,7 @@ extracter('./movie.mp4').then((res) => {
 ````
 // demo 2
 
-const extracter = require('./lib.js');
+const extracter = require('video-extracter');
 async function yourFunction() {
   const result = await extracter('./movie.mp4');
   console.log(result);
