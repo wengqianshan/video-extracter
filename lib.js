@@ -31,7 +31,7 @@ module.exports = async function videoExtracter (input, options = {}) {
     result.files = files;
     result.dirname = dirname;
   } catch (e) {
-    result.error = e.msg;
+    result.error = e.message;
   }
   return result;
 }
