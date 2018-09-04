@@ -13,17 +13,20 @@ const del = require('del');
  *   error: 错误信息，当存在错误信息时表示执行失败
  *   files: 返回文件列表
  *   dirname: 目录名，本次操作返回的文件目录
+ *   subdir: 二级目录名， 注意：要保证每个文件有一个唯一的二级目录，所以一般情况下不建议设置此项
  * }
  */
 module.exports = async function videoExtracter (input, options = {}) {
   const defaults = {
     frame_rate: 1,
     number: 3,
+    // keep_pixel_aspect_ratio: false,
+    // keep_aspect_ratio: false,
     // every_n_percentage: 20, // 部分视频无法正确输出
     file_name: 'e_%t_%s'
   };
   const settings = Object.assign(defaults, options.settings);
-  const tmpdir = 'tmp_' + Date.now();
+  const tmpdir = options.subdir || 'tmp_' + Date.now();
   const dirname = path.join(options.dirname || 'files', tmpdir);
   let result = {};
   try {
