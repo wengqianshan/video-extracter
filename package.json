@@ -1,6 +1,6 @@
 {
   "name": "video-extracter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "get photos from video",
   "main": "lib.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/xiaoshan5733/video-extracter#readme",
   "dependencies": {
+    "del": "^3.0.0",
     "ffmpeg": "0.0.4"
   }
 }

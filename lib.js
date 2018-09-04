@@ -1,5 +1,6 @@
-const ffmpeg = require('ffmpeg');
 const path = require('path');
+const ffmpeg = require('ffmpeg');
+const del = require('del');
 /**
  * 抽取视频图片
  * @param {input} 文件路径
@@ -17,7 +18,7 @@ const path = require('path');
 module.exports = async function videoExtracter (input, options = {}) {
   const defaults = {
     frame_rate: 1,
-    number: 5,
+    number: 3,
     // every_n_percentage: 20, // 部分视频无法正确输出
     file_name: 'e_%t_%s'
   };
@@ -32,6 +33,8 @@ module.exports = async function videoExtracter (input, options = {}) {
     result.dirname = dirname;
   } catch (e) {
     result.error = e.message;
+    // 提取失败，删除预置目录
+    del.sync(dirname);
   }
   return result;
 }
